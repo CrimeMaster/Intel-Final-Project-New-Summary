@@ -47,7 +47,8 @@ async def get_Summary(url: str, summary_len: int):
     title , data = allNews(url)
     summary, doc, scores_df, len_doc, len_summary = summarizer(data, summary_len)
 
-    return {    "Wordcount" : len_summary,
+    return {    "OriginalWordCount" : len_doc,
+                "SummaryWordCount" : len_summary,
                 "Summary" : summary,
                 "Scores" : scores_df
             }
